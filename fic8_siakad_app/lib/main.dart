@@ -3,12 +3,15 @@ import 'package:fic8_siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/bloc_observer.dart';
 import 'bloc/khs/khs_bloc.dart';
 import 'bloc/qrcode/qrcode_bloc.dart';
 import 'bloc/schedules/schedules_bloc.dart';
 import 'data/datasources/auth_local_datasource.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
 
@@ -17,6 +20,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return buildMultiBlocProvider();
+  }
+
+  MultiBlocProvider buildMultiBlocProvider() {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -32,7 +39,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
         home: FutureBuilder<bool>(
