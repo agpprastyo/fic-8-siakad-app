@@ -6,6 +6,7 @@ class AuthLocalDatasource {
   Future<bool> saveAuthData(AuthResponseModel data) async {
     final pref = await SharedPreferences.getInstance();
     final result = await pref.setString('auth', data.toJson());
+
     return result;
   }
 

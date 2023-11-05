@@ -1,6 +1,7 @@
 import 'package:fic8_siakad_app/pages/auth/auth_page.dart';
 import 'package:fic8_siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,6 +9,7 @@ import 'bloc/bloc_observer.dart';
 import 'bloc/khs/khs_bloc.dart';
 import 'bloc/qrcode/qrcode_bloc.dart';
 import 'bloc/schedules/schedules_bloc.dart';
+import 'common/constants/colors.dart';
 import 'data/datasources/auth_local_datasource.dart';
 
 Future<void> main() async {
@@ -21,10 +23,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return buildMultiBlocProvider();
-  }
-
-  MultiBlocProvider buildMultiBlocProvider() {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: ColorName.primary,
+      statusBarIconBrightness: Brightness.light,
+    ));
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -43,6 +45,7 @@ class MyApp extends StatelessWidget {
           splitScreenMode: false,
           builder: (_, child) {
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),

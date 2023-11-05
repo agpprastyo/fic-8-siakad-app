@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 import '../../bloc/logout/logout_bloc.dart';
 import '../../common/constants/colors.dart';
@@ -23,15 +24,50 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String name = "";
+  String email = "";
+  String roles = "";
+  String formattedDate = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchCurrentDate();
+    // Call the getUser method to retrieve user data from SharedPreferences
+    _fetchUserData();
+  }
+
+  Future<void> _fetchCurrentDate() async {
+    final currentDate = DateTime.now();
+    formattedDate = DateFormat('EEEE, d MMMM y').format(currentDate);
+    setState(() {
+      formattedDate = formattedDate;
+      print(formattedDate);
+    });
+  }
+
+  Future<void> _fetchUserData() async {
+    final authLocalDataSource = AuthLocalDatasource();
+    final user = await authLocalDataSource.getUser();
+
+    // Update the state with the user data
+    setState(() {
+      name = user.name;
+      email = user.email;
+      roles = user.roles;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+      paddingTop: 0.0,
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          SizedBox(height: 60.0.h),
+          SizedBox(height: 30.0.h),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
@@ -48,17 +84,20 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             child: Column(
               children: [
-                SizedBox(height: 22.0.h),
+                SizedBox(height: 16.0.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(50.0.r)),
-                      child: Image.network(
-                        'https://avatars.githubusercontent.com/u/534678?v=4',
-                        width: 72.0.h,
-                        height: 72.0.h,
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: EdgeInsets.only(left: 20.w),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(50.0.r)),
+                        child: Image.network(
+                          'https://hrcdn.net/s3_pub/hr-avatars/8524450b-3852-4a1e-b2eb-5e7045b178db/150x150.png',
+                          width: 72.0.h,
+                          height: 72.0.h,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     SizedBox(width: 10.0.w),
@@ -82,15 +121,17 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ),
                         ),
-                        const Text(
-                          "Saiful Bahri",
-                          style: TextStyle(
+                        SizedBox(height: 4.h),
+                        Text(
+                          name,
+                          style: const TextStyle(
                             fontWeight: FontWeight.w700,
                             color: ColorName.primary,
                           ),
                         ),
+                        SizedBox(height: 4.h),
                         Text(
-                          "Senin, 28 Agustus 2023",
+                          formattedDate,
                           style: TextStyle(
                             fontSize: 8.sp,
                             fontWeight: FontWeight.w500,
