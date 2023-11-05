@@ -1,5 +1,6 @@
 import 'package:fic8_siakad_app/pages/mahasiswa/widgets/sample_map_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
@@ -28,10 +29,10 @@ class _DashboardPageState extends State<DashboardPage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
+            Text(
               "Perkuliahan",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.w700,
                 color: ColorName.primary,
               ),
@@ -73,11 +74,11 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
           ],
         ),
-        const SizedBox(height: 10.0),
+        SizedBox(height: 10.0.h),
         SearchInput(
           controller: searchController,
         ),
-        const SizedBox(height: 40.0),
+        SizedBox(height: 40.0.h),
         MenuCard(
           label: 'Kartu Hasil\nStudi',
           backgroundColor: const Color(0xff686BFF),
@@ -87,7 +88,7 @@ class _DashboardPageState extends State<DashboardPage> {
           },
           imagePath: Images.khs,
         ),
-        const SizedBox(height: 40.0),
+        SizedBox(height: 40.0.h),
         MenuCard(
           label: 'Nilai\nMata Kuliah',
           backgroundColor: const Color(0xffFFB023),
@@ -97,7 +98,7 @@ class _DashboardPageState extends State<DashboardPage> {
           },
           imagePath: Images.nMatkul,
         ),
-        const SizedBox(height: 40.0),
+        SizedBox(height: 40.0.h),
         MenuCard(
           label: 'Jadwal\nMata Kuliah',
           backgroundColor: const Color(0xffFF68F0),

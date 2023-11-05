@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/constants/colors.dart';
 import '../models/course_schedule_model.dart';
@@ -16,7 +17,7 @@ class CourseScheduleTile extends StatelessWidget {
           SizedBox(
             width: 65.0,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              padding: EdgeInsets.symmetric(vertical: 16.0.w),
               child: Column(
                 children: [
                   Text(data.startTime),
@@ -30,11 +31,11 @@ class CourseScheduleTile extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 12.0),
+          SizedBox(width: 12.0.h),
           const VerticalDivider(),
-          const SizedBox(width: 12.0),
+          SizedBox(width: 12.0.h),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: EdgeInsets.symmetric(vertical: 16.0.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -44,9 +45,9 @@ class CourseScheduleTile extends StatelessWidget {
                     color: ColorName.primary,
                   ),
                 ),
-                const SizedBox(height: 18.0),
+                SizedBox(height: 18.0.h),
                 Text('Dosen: ${data.lecturer}'),
-                const SizedBox(height: 18.0),
+                SizedBox(height: 18.0.h),
                 Text(
                   data.description,
                   style: const TextStyle(

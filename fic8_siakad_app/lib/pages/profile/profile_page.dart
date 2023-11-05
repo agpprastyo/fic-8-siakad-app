@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bloc/logout/logout_bloc.dart';
 import '../../common/constants/colors.dart';
@@ -26,14 +27,14 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          const SizedBox(height: 60.0),
+          SizedBox(height: 60.0.h),
           Container(
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               color: ColorName.white,
               boxShadow: [
                 BoxShadow(
@@ -47,37 +48,36 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             child: Column(
               children: [
-                const SizedBox(height: 22.0),
+                SizedBox(height: 22.0.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ClipRRect(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(50.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(50.0.r)),
                       child: Image.network(
                         'https://avatars.githubusercontent.com/u/534678?v=4',
-                        width: 72.0,
-                        height: 72.0,
+                        width: 72.0.h,
+                        height: 72.0.h,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(width: 10.0),
+                    SizedBox(width: 10.0.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 11.0, vertical: 2.0),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 11.0.w, vertical: 2.0.h),
                           decoration: BoxDecoration(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(16.0)),
+                                BorderRadius.all(Radius.circular(16.0.r)),
                             border: Border.all(color: ColorName.primary),
                           ),
                           child: Text(
                             widget.role,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: ColorName.primary,
-                              fontSize: 8,
+                              fontSize: 8.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -89,10 +89,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             color: ColorName.primary,
                           ),
                         ),
-                        const Text(
+                        Text(
                           "Senin, 28 Agustus 2023",
                           style: TextStyle(
-                            fontSize: 8,
+                            fontSize: 8.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -100,21 +100,20 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5.0),
+                SizedBox(height: 5.0.h),
                 Dash(
-                  length: MediaQuery.of(context).size.width - 60.0,
+                  length: MediaQuery.of(context).size.width - 60.0.w,
                   dashColor: const Color(0xffD5DFE7),
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0.h),
               ],
             ),
           ),
-          const SizedBox(height: 60.0),
+          SizedBox(height: 60.0.h),
           Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               color: ColorName.white,
               boxShadow: [
                 BoxShadow(
@@ -143,7 +142,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     // );
                   },
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12.0.h),
                 RowText(
                   icon: const Icon(Icons.notifications),
                   label: 'Notifikasi',
@@ -151,7 +150,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   valueColor: ColorName.primary,
                   onTap: () {},
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12.0.h),
                 RowText(
                   icon: const Icon(Icons.translate),
                   label: 'Bahasa',
@@ -162,12 +161,11 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          const SizedBox(height: 24.0),
+          SizedBox(height: 24.0.h),
           Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               color: ColorName.white,
               boxShadow: [
                 BoxShadow(
@@ -189,7 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   valueColor: ColorName.primary,
                   onTap: () {},
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12.0.h),
                 RowText(
                   icon: const ImageIcon(IconName.mentalHealthLine),
                   label: 'Tema',
@@ -200,12 +198,11 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          const SizedBox(height: 24.0),
+          SizedBox(height: 24.0.h),
           Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               color: ColorName.white,
               boxShadow: [
                 BoxShadow(
@@ -227,7 +224,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   valueColor: ColorName.primary,
                   onTap: () {},
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12.0.h),
                 RowText(
                   icon: const ImageIcon(IconName.chatQuoteLine),
                   label: 'Contact us',
@@ -235,7 +232,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   valueColor: ColorName.primary,
                   onTap: () {},
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12.0.h),
                 RowText(
                   icon: const Icon(Icons.lock),
                   label: 'Privacy policy',
@@ -243,9 +240,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   valueColor: ColorName.primary,
                   onTap: () {},
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
+                SizedBox(height: 12.h),
                 Center(
                   child: BlocProvider(
                     create: (context) => LogoutBloc(),

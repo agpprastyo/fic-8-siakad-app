@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/colors.dart';
 
@@ -21,10 +22,10 @@ class MenuCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.0.h),
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: const BorderRadius.all(Radius.circular(32.5)),
+            borderRadius: BorderRadius.all(Radius.circular(32.5.r)),
           ),
           child: Row(
             children: [
@@ -33,45 +34,45 @@ class MenuCard extends StatelessWidget {
                 children: [
                   Text(
                     label,
-                    style: const TextStyle(
-                      fontSize: 24,
+                    style: TextStyle(
+                      fontSize: 24.sp,
                       fontWeight: FontWeight.w700,
                       color: ColorName.white,
                     ),
                   ),
-                  const SizedBox(height: 5.0),
+                  SizedBox(height: 5.0.h),
                   ElevatedButton(
                     onPressed: onPressed,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: ColorName.white,
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text('Lihat'),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0.h),
+                      child: const Text('Lihat'),
                     ),
                   ),
                 ],
               ),
               const Spacer(),
               Container(
-                width: 91,
-                height: 106,
+                width: 91.w,
+                height: 106.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(94.25),
+                  borderRadius: BorderRadius.circular(94.25.h),
                   color: ColorName.white.withOpacity(0.2),
                 ),
               ),
-              const SizedBox(width: 8.0),
+              SizedBox(width: 8.0.w),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 40.0),
+          padding: EdgeInsets.only(top: 40.0.h),
           child: Align(
             alignment: Alignment.bottomRight,
             child: Image.asset(
               imagePath,
-              height: 90.0,
+              height: 90.0.h,
             ),
           ),
         ),

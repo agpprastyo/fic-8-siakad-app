@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/constants/images.dart';
 import 'auth_page.dart';
@@ -31,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: Image.asset(
           Images.logo,
-          width: 150.0,
+          width: 150.0.w,
         ),
       ),
     );

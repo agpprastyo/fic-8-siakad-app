@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/colors.dart';
-
-
-
 
 class CustomScaffold extends StatelessWidget {
   final Widget? body;
@@ -28,13 +26,13 @@ class CustomScaffold extends StatelessWidget {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height - 120.0,
-                  margin: const EdgeInsets.only(top: 60.0),
-                  padding: const EdgeInsets.only(bottom: 60.0),
-                  decoration: const BoxDecoration(
+                  height: MediaQuery.of(context).size.height - 120.0.h,
+                  margin: EdgeInsets.only(top: 60.0.h),
+                  padding: EdgeInsets.only(bottom: 60.0.h),
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(10.0),
+                      top: Radius.circular(10.0.r),
                     ),
                   ),
                 ),
@@ -49,18 +47,18 @@ class CustomScaffold extends StatelessWidget {
           : SingleChildScrollView(
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.only(top: 60.0),
-                padding: const EdgeInsets.only(bottom: 60.0),
-                decoration: const BoxDecoration(
+                margin: EdgeInsets.only(top: 60.0.h),
+                padding: EdgeInsets.only(bottom: 60.0.h),
+                decoration: BoxDecoration(
                   color: ColorName.white,
                   borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(10.0),
+                    top: Radius.circular(10.0.r),
                   ),
                 ),
                 child: body,
               ),
             ),
-            bottomNavigationBar: bottomNavigationBar,
+      bottomNavigationBar: bottomNavigationBar,
     );
   }
 }

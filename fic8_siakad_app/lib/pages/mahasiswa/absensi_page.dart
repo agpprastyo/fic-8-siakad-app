@@ -2,6 +2,7 @@ import 'package:fic8_siakad_app/pages/mahasiswa/widgets/qrcode_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
@@ -94,13 +95,13 @@ class _AbsensiPageState extends State<AbsensiPage> {
     return CustomScaffold(
       // useExtraPadding: true,
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        padding: EdgeInsets.symmetric(horizontal: 30.0.w),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
           Container(
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               color: ColorName.white,
               boxShadow: [
                 BoxShadow(
@@ -115,37 +116,36 @@ class _AbsensiPageState extends State<AbsensiPage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 28.0, vertical: 20.0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 28.0.w, vertical: 20.0.h),
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(50.0)),
+                        borderRadius: BorderRadius.all(Radius.circular(50.0.r)),
                         child: Image.network(
                           'https://avatars.githubusercontent.com/u/534678?v=4',
-                          width: 72.0,
-                          height: 72.0,
+                          width: 72.0.h,
+                          height: 72.0.h,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(width: 10.0),
+                      SizedBox(width: 10.0.w),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 11.0, vertical: 2.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11.0.w, vertical: 2.0.h),
                             decoration: BoxDecoration(
                               borderRadius:
-                                  const BorderRadius.all(Radius.circular(16.0)),
+                                  BorderRadius.all(Radius.circular(16.0.r)),
                               border: Border.all(color: ColorName.primary),
                             ),
-                            child: const Text(
+                            child: Text(
                               'Mahasiswa',
                               style: TextStyle(
                                 color: ColorName.primary,
-                                fontSize: 8,
+                                fontSize: 8.sp,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -157,10 +157,10 @@ class _AbsensiPageState extends State<AbsensiPage> {
                               color: ColorName.primary,
                             ),
                           ),
-                          const Text(
+                          Text(
                             "Senin, 28 Agustus 2023",
                             style: TextStyle(
-                              fontSize: 8,
+                              fontSize: 8.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -170,7 +170,7 @@ class _AbsensiPageState extends State<AbsensiPage> {
                   ),
                 ),
                 Dash(
-                  length: MediaQuery.of(context).size.width - 60.0,
+                  length: MediaQuery.of(context).size.width - 60.0.h,
                   dashColor: const Color(0xffD5DFE7),
                 ),
                 const SizedBox(height: 12.0),
@@ -183,8 +183,8 @@ class _AbsensiPageState extends State<AbsensiPage> {
 
                     return Text(
                       formattedTime,
-                      style: const TextStyle(
-                        fontSize: 32,
+                      style: TextStyle(
+                        fontSize: 32.sp,
                         fontWeight: FontWeight.w700,
                         color: Colors.blue, // Ganti dengan warna yang sesuai
                       ),
@@ -194,14 +194,14 @@ class _AbsensiPageState extends State<AbsensiPage> {
               ],
             ),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: 10.0.h),
           // Image.asset(
           //   Images.maps,
           //   height: 184.0,
           //   fit: BoxFit.cover,
           // ),
           SizedBox(
-            height: 200,
+            height: 200.h,
             child: latitude == null
                 ? const SizedBox()
                 : GoogleMap(
@@ -214,7 +214,7 @@ class _AbsensiPageState extends State<AbsensiPage> {
                     mapType: MapType.normal,
                   ),
           ),
-          const SizedBox(height: 20.0),
+          SizedBox(height: 20.0.h),
           Button.filled(
             onPressed: () {
               Navigator.push(
@@ -229,33 +229,33 @@ class _AbsensiPageState extends State<AbsensiPage> {
               IconName.scan,
               color: ColorName.white,
             ),
-            borderRadius: 50.0,
+            borderRadius: 50.0.r,
           ),
-          const SizedBox(height: 30.0),
+          SizedBox(height: 30.0.h),
           Container(
-            padding: const EdgeInsets.all(20.0),
-            decoration: const BoxDecoration(
+            padding: EdgeInsets.all(20.0.h),
+            decoration: BoxDecoration(
                 color: ColorName.primary,
-                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                borderRadius: BorderRadius.all(Radius.circular(10.0.r))),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Riwayat Absensi",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w700,
                     color: ColorName.white,
                   ),
                 ),
-                const SizedBox(height: 5),
+                SizedBox(height: 5.h),
                 for (int i = 0; i < times.length; i++)
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    padding: EdgeInsets.symmetric(vertical: 5.0.h),
                     child: Text(
                       "JAM ${times[i].format(context)}",
-                      style: const TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(
+                        fontSize: 16.sp,
                         color: ColorName.white,
                       ),
                     ),

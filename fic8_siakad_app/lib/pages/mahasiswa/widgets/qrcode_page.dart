@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../../../bloc/qrcode/qrcode_bloc.dart';
@@ -33,7 +34,7 @@ class _QrCodePageState extends State<QrCodePage> {
                 }
               },
             ),
-            iconSize: 32.0,
+            iconSize: 32.0.h,
             onPressed: () => cameraController.toggleTorch(),
           ),
           IconButton(
@@ -49,7 +50,7 @@ class _QrCodePageState extends State<QrCodePage> {
                 }
               },
             ),
-            iconSize: 32.0,
+            iconSize: 32.0.h,
             onPressed: () => cameraController.switchCamera(),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bloc/khs/khs_bloc.dart';
 import '../../common/constants/colors.dart';
@@ -29,14 +30,14 @@ class _KhsPageState extends State<KhsPage> {
         // shrinkWrap: true,
         // physics: const NeverScrollableScrollPhysics(),
         children: [
-          const Text(
+          Text(
             "KHS Mahasiswa",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height: 8.0.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -52,42 +53,42 @@ class _KhsPageState extends State<KhsPage> {
               ),
             ],
           ),
-          const SizedBox(height: 16.0),
+          SizedBox(height: 16.0.h),
           ListTile(
             contentPadding: const EdgeInsets.all(0),
             leading: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+              borderRadius: BorderRadius.all(Radius.circular(50.0.r)),
               child: Image.network(
                 'https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2021/12/15/1405406409.jpg',
-                width: 40,
-                height: 40,
+                width: 40.h,
+                height: 40.h,
                 fit: BoxFit.cover,
               ),
             ),
-            title: const Text(
+            title: Text(
               "Jesica Jane",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            subtitle: const Text(
+            subtitle: Text(
               "Mahasiswa",
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 12.sp,
               ),
             ),
           ),
-          const SizedBox(height: 16.0),
+          SizedBox(height: 16.0.h),
           const Divider(),
-          const SizedBox(height: 16.0),
+          SizedBox(height: 16.0.h),
           const RowText(
             label: 'Mata Kuliah :',
             value: 'Nilai :',
             labelColor: ColorName.primary,
             valueColor: ColorName.primary,
           ),
-          const SizedBox(height: 14.0),
+          SizedBox(height: 14.0.h),
           Expanded(
             child: BlocBuilder<KhsBloc, KhsState>(
               builder: (context, state) {
@@ -112,8 +113,7 @@ class _KhsPageState extends State<KhsPage> {
                           child: ListView.builder(
                             itemBuilder: (context, index) {
                               return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 6),
+                                padding: EdgeInsets.symmetric(vertical: 6.h),
                                 child: RowText(
                                   label: data[index].subject.title,
                                   value: data[index].grade.toString(),
@@ -123,7 +123,7 @@ class _KhsPageState extends State<KhsPage> {
                             itemCount: data.length,
                           ),
                         ),
-                        const SizedBox(height: 40.0),
+                        SizedBox(height: 40.0.h),
                         RowText(
                           label: 'IPK Semester :',
                           value: ipk.toString(),

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/colors.dart';
-
-
 
 class RowText extends StatelessWidget {
   final String label;
@@ -33,7 +32,7 @@ class RowText extends StatelessWidget {
           icon == null
               ? const SizedBox.shrink()
               : Padding(
-                  padding: const EdgeInsets.only(right: 14.0),
+                  padding: EdgeInsets.only(right: 14.0.h),
                   child: icon!,
                 ),
           Text(

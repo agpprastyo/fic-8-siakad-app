@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../constants/colors.dart';
 
 enum ButtonStyle { filled, outlined }
@@ -58,12 +60,12 @@ class Button extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   icon ?? const SizedBox.shrink(),
-                  if (icon != null) const SizedBox(width: 10.0),
+                  if (icon != null) SizedBox(width: 10.w),
                   Text(
                     label,
                     style: TextStyle(
                       color: textColor,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -76,19 +78,19 @@ class Button extends StatelessWidget {
                 backgroundColor: color,
                 side: const BorderSide(color: Colors.grey),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6.0),
+                  borderRadius: BorderRadius.circular(6.0.r),
                 ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   icon ?? const SizedBox.shrink(),
-                  if (icon != null) const SizedBox(width: 10.0),
+                  if (icon != null) SizedBox(width: 10.0.w),
                   Text(
                     label,
                     style: TextStyle(
                       color: textColor,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

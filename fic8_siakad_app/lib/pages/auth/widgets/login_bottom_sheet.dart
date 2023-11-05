@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../bloc/login/login_bloc.dart';
 import '../../../common/constants/colors.dart';
@@ -34,9 +35,9 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-          top: 20,
-          right: 20,
-          left: 20,
+          top: 20.h,
+          right: 20.h,
+          left: 20.h,
           bottom: MediaQuery.of(context).viewInsets.bottom),
       child: ListView(
         // mainAxisSize: MainAxisSize.min,
@@ -50,48 +51,48 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
                   Navigator.pop(context);
                 },
               ),
-              const Text(
+              Text(
                 "Masuk",
                 style: TextStyle(
-                  fontSize: 18.0,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(width: 40.0),
+              SizedBox(width: 40.0.w),
             ],
           ),
           const Divider(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 24.0),
-              const Text(
+              SizedBox(height: 24.0.h),
+              Text(
                 "Selamat Datang",
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(height: 8.0.h),
               const Text(
                 "Masukkan Email dan password agar bisa mengakses informasi administrasi.",
                 style: TextStyle(
                   color: ColorName.grey,
                 ),
               ),
-              const SizedBox(height: 50.0),
+              SizedBox(height: 50.0.h),
               CustomTextField(
                 controller: usernameController,
                 label: 'Email',
                 textInputType: TextInputType.emailAddress,
               ),
-              const SizedBox(height: 12.0),
+              SizedBox(height: 12.0.h),
               CustomTextField(
                 controller: passwordController,
                 label: 'Password',
                 obscureText: true,
               ),
-              const SizedBox(height: 24.0),
+              SizedBox(height: 24.0.h),
               BlocListener<LoginBloc, LoginState>(
                 listener: (context, state) {
                   state.maybeWhen(
@@ -148,7 +149,7 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
                   },
                 ),
               ),
-              const SizedBox(height: 12.0),
+              SizedBox(height: 12.0.h),
             ],
           ),
         ],

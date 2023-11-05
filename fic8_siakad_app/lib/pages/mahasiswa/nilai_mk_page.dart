@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/constants/colors.dart';
 import '../../common/widgets/custom_scaffold.dart';
@@ -17,18 +18,18 @@ class _NilaiMkPageState extends State<NilaiMkPage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: ListView(
-        padding: const EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(24.0.h),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          const Text(
+          Text(
             "Nilai MK",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height: 8.0.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -44,7 +45,7 @@ class _NilaiMkPageState extends State<NilaiMkPage> {
               ),
             ],
           ),
-          const SizedBox(height: 15.0),
+          SizedBox(height: 15.0.h),
           CourseGradeTile(
             data: CourseGradeModel(
               information: '',
@@ -54,7 +55,7 @@ class _NilaiMkPageState extends State<NilaiMkPage> {
               description: 'Tugas Praktikum',
             ),
           ),
-          const SizedBox(height: 50.0),
+          SizedBox(height: 50.0.h),
           CourseGradeTile(
             data: CourseGradeModel(
               information: '',
@@ -64,7 +65,7 @@ class _NilaiMkPageState extends State<NilaiMkPage> {
               description: 'Tugas Praktikum',
             ),
           ),
-          const SizedBox(height: 50.0),
+          SizedBox(height: 50.0.h),
           CourseGradeTile(
             data: CourseGradeModel(
               information: '',

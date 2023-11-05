@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bloc/login/login_bloc.dart';
 import '../../common/constants/colors.dart';
@@ -22,22 +23,22 @@ class _AuthPageState extends State<AuthPage> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.asset(
             Images.logo,
-            width: 115.0,
+            width: 115.0.w,
           ),
-          const SizedBox(height: 8.0),
-          const Text(
+          SizedBox(height: 8.0.h),
+          Text(
             "SIAKAD CWB",
             style: TextStyle(
-              fontSize: 34,
+              fontSize: 34.sp,
               fontWeight: FontWeight.w800,
               color: ColorName.primary,
             ),
           ),
-          const SizedBox(height: 8.0),
-          const Text(
+          SizedBox(height: 8.0.h),
+          Text(
             "Melayani Edukasi, Memudahkan Administrasi!",
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w600,
               color: ColorName.grey,
             ),
@@ -45,11 +46,11 @@ class _AuthPageState extends State<AuthPage> {
         ]),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0.h, vertical: 24.0.w),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(height: 8.0),
+            SizedBox(height: 8.0.h),
             Button.outlined(
               onPressed: () {
                 showModalBottomSheet(
@@ -66,9 +67,9 @@ class _AuthPageState extends State<AuthPage> {
               },
               label: 'LOGIN',
             ),
-            const SizedBox(height: 32.0),
-            const Text.rich(
-              TextSpan(
+            SizedBox(height: 32.0.h),
+            Text.rich(
+              const TextSpan(
                 text: "Dengan memilih salah satu, Anda menyetujuinya ",
                 children: [
                   TextSpan(
@@ -81,7 +82,7 @@ class _AuthPageState extends State<AuthPage> {
                 ],
               ),
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 12.sp,
                 color: ColorName.grey,
               ),
               textAlign: TextAlign.center,

@@ -2,6 +2,7 @@ import 'package:fic8_siakad_app/pages/auth/auth_page.dart';
 import 'package:fic8_siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bloc/bloc_observer.dart';
 import 'bloc/khs/khs_bloc.dart';
@@ -36,23 +37,29 @@ class MyApp extends StatelessWidget {
           create: (context) => QrcodeBloc(),
         ),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-          useMaterial3: true,
-        ),
-        home: FutureBuilder<bool>(
-          future: AuthLocalDatasource().isLogin(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData && snapshot.data!) {
-              return const MahasiswaPage();
-            } else {
-              return const AuthPage();
-            }
-          },
-        ),
-      ),
+      child: ScreenUtilInit(
+          designSize: const Size(360, 690),
+          minTextAdapt: true,
+          splitScreenMode: false,
+          builder: (_, child) {
+            return MaterialApp(
+              title: 'Flutter Demo',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+                useMaterial3: true,
+              ),
+              home: FutureBuilder<bool>(
+                future: AuthLocalDatasource().isLogin(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData && snapshot.data!) {
+                    return const MahasiswaPage();
+                  } else {
+                    return const AuthPage();
+                  }
+                },
+              ),
+            );
+          }),
     );
   }
 }

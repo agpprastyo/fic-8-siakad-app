@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchInput extends StatelessWidget {
   final TextEditingController controller;
@@ -15,16 +16,16 @@ class SearchInput extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xffe0e4ff),
-        borderRadius: BorderRadius.circular(32.0),
+        borderRadius: BorderRadius.circular(32.0.r),
       ),
       child: TextFormField(
         controller: controller,
         onChanged: onChanged,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           hintText: 'Cari di sini',
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: InputBorder.none,
-          contentPadding: EdgeInsets.all(16.0),
+          contentPadding: EdgeInsets.all(16.0.h),
         ),
       ),
     );
