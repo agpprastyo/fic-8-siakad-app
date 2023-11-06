@@ -34,6 +34,7 @@ class _AbsensiPageState extends State<AbsensiPage> {
   late GoogleMapController mapController;
   double? latitude;
   double? longitude;
+
   Future<void> getCurrentPosition() async {
     try {
       Location location = Location();
@@ -94,25 +95,26 @@ class _AbsensiPageState extends State<AbsensiPage> {
     );
     return CustomScaffold(
       // useExtraPadding: true,
+      appbar: AppBar(),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30.0.w),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-              color: ColorName.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 4.0,
-                  offset: const Offset(0, 3),
-                  spreadRadius: 0,
-                  color: ColorName.black.withOpacity(0.25),
-                  blurStyle: BlurStyle.outer,
-                ),
-              ],
-            ),
+          Card(
+            // decoration: BoxDecoration(
+            //   borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
+            //   color: ColorName.white,
+            //   boxShadow: [
+            //     BoxShadow(
+            //       blurRadius: 4.0,
+            //       offset: const Offset(0, 3),
+            //       spreadRadius: 0,
+            //       color: ColorName.black.withOpacity(0.25),
+            //       blurStyle: BlurStyle.outer,
+            //     ),
+            //   ],
+            // ),
             child: Column(
               children: [
                 Padding(
@@ -170,7 +172,7 @@ class _AbsensiPageState extends State<AbsensiPage> {
                   ),
                 ),
                 Dash(
-                  length: MediaQuery.of(context).size.width - 60.0.h,
+                  length: MediaQuery.of(context).size.width - 80.0.w,
                   dashColor: const Color(0xffD5DFE7),
                 ),
                 const SizedBox(height: 12.0),
@@ -195,11 +197,6 @@ class _AbsensiPageState extends State<AbsensiPage> {
             ),
           ),
           SizedBox(height: 10.0.h),
-          // Image.asset(
-          //   Images.maps,
-          //   height: 184.0,
-          //   fit: BoxFit.cover,
-          // ),
           SizedBox(
             height: 200.h,
             child: latitude == null

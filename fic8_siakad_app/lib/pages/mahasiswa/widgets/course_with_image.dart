@@ -17,23 +17,33 @@ class CourseWithImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          imagePath,
-          height: 112.0.h,
-          width: 96.0.w,
-          fit: BoxFit.cover,
-        ),
         Container(
+          margin: EdgeInsets.only(right: 20.w),
           height: 112.0.h,
           width: 96.0.w,
-          padding: EdgeInsets.only(bottom: 20.0.h),
-          alignment: Alignment.bottomCenter,
-          child: Text(
-            name,
-            style: TextStyle(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w700,
-              color: ColorName.white,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.h),
+            color: Colors.red,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                imagePath,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 10.h,
+          child: SizedBox(
+            width: 96.0.w,
+            child: Text(
+              name,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w700,
+                color: ColorName.white,
+              ),
             ),
           ),
         ),

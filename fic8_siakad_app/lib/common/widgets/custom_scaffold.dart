@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomScaffold extends StatelessWidget {
+  final AppBar? appbar;
   final Widget? body;
   final bool useExtraPadding;
   final double paddingTop;
@@ -13,12 +14,14 @@ class CustomScaffold extends StatelessWidget {
     this.useExtraPadding = false,
     this.paddingTop = 20.0,
     this.bottomNavigationBar,
+    this.appbar,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: ColorName.primary,
+      appBar: appbar,
       body: useExtraPadding
           ? Stack(
               children: [

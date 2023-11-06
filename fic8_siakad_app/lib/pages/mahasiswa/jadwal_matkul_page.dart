@@ -27,24 +27,25 @@ class _JadwalMatkulPageState extends State<JadwalMatkulPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          // padding: const EdgeInsets.all(24.0),
-          // shrinkWrap: true,
-          // physics: const NeverScrollableScrollPhysics(),
-          children: [
-            Text(
-              "Jadwal MK",
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w700,
-              ),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "Jadwal MK",
+            style: TextStyle(
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w700,
             ),
-            Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 20.0.h),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+          ),
+        ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 112.0.h,
+              child: ListView(
+                padding: EdgeInsets.only(left: 10.w),
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                scrollDirection: Axis.horizontal,
+                children: const [
                   CourseWithImage(
                     name: 'Basis Data',
                     imagePath: Images.basisData,
@@ -52,6 +53,14 @@ class _JadwalMatkulPageState extends State<JadwalMatkulPage> {
                   CourseWithImage(
                     name: 'Algoritma',
                     imagePath: Images.algoritma,
+                  ),
+                  CourseWithImage(
+                    name: 'RPL',
+                    imagePath: Images.rpl,
+                  ),
+                  CourseWithImage(
+                    name: 'RPL',
+                    imagePath: Images.rpl,
                   ),
                   CourseWithImage(
                     name: 'RPL',

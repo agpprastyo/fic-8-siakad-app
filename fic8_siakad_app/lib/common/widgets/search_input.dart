@@ -13,27 +13,18 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onBackground,
-        borderRadius: BorderRadius.circular(32.0.r),
-      ),
-      child: TextFormField(
-        controller: controller,
-        onChanged: onChanged,
-        decoration: InputDecoration(
-          hintText: 'Cari di sini',
-          hintStyle: TextStyle(
-            color: Theme.of(context).colorScheme.inversePrimary,
-          ),
-          prefixIcon: Icon(
-            Icons.search,
-            color: Theme.of(context).colorScheme.inversePrimary,
-          ),
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.all(16.0.h),
+    return SearchBar(
+      leading: Padding(
+        padding: EdgeInsets.only(left: 8.0.h),
+        child: const Icon(
+          Icons.search,
+          // color: Theme.of(context).colorScheme.inversePrimary,
         ),
       ),
+      hintText: 'Cari di sini',
+      controller: controller,
+      onChanged: onChanged,
+      elevation: MaterialStateProperty.all(2),
     );
   }
 }
