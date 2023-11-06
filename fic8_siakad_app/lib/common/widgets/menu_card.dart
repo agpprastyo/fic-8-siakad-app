@@ -44,11 +44,18 @@ class MenuCard extends StatelessWidget {
                   ElevatedButton(
                     onPressed: onPressed,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorName.white,
+                      backgroundColor:
+                          Theme.of(context).colorScheme.inversePrimary,
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0.h),
-                      child: const Text('Lihat'),
+                      child: Text(
+                        'Lihat',
+                        style: TextStyle(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer),
+                      ),
                     ),
                   ),
                 ],

@@ -15,7 +15,7 @@ class SearchInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xffe0e4ff),
+        color: Theme.of(context).colorScheme.onBackground,
         borderRadius: BorderRadius.circular(32.0.r),
       ),
       child: TextFormField(
@@ -23,7 +23,13 @@ class SearchInput extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: 'Cari di sini',
-          prefixIcon: const Icon(Icons.search),
+          hintStyle: TextStyle(
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+          prefixIcon: Icon(
+            Icons.search,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(16.0.h),
         ),

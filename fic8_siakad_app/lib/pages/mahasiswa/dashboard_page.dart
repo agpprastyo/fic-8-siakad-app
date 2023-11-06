@@ -2,7 +2,6 @@ import 'package:fic8_siakad_app/pages/mahasiswa/widgets/sample_map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
 import '../../common/widgets/menu_card.dart';
 import '../../common/widgets/search_input.dart';
@@ -26,6 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
     return ListView(
       padding: const EdgeInsets.all(20.0),
       children: [
+        // SizedBox(height: 10.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
               style: TextStyle(
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w700,
-                color: ColorName.primary,
+                // color: ColorName.primary,
               ),
             ),
             Row(
@@ -48,7 +48,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   },
                   icon: const Icon(
                     Icons.map,
-                    color: ColorName.green,
+                    // color: ColorName.green,
                   ),
                 ),
                 IconButton(
@@ -60,14 +60,14 @@ class _DashboardPageState extends State<DashboardPage> {
                   },
                   icon: const Icon(
                     Icons.qr_code_scanner,
-                    color: ColorName.primary,
+                    // color: ColorName.primary,
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(
                     Icons.notifications,
-                    color: ColorName.primary,
+                    // color: ColorName.primary,
                   ),
                 ),
               ],

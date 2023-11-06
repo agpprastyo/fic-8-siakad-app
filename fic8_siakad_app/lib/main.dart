@@ -1,3 +1,4 @@
+import 'package:fic8_siakad_app/common/constants/colors.dart';
 import 'package:fic8_siakad_app/pages/auth/auth_page.dart';
 import 'package:fic8_siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +10,13 @@ import 'bloc/bloc_observer.dart';
 import 'bloc/khs/khs_bloc.dart';
 import 'bloc/qrcode/qrcode_bloc.dart';
 import 'bloc/schedules/schedules_bloc.dart';
-import 'common/constants/colors.dart';
+import 'color_schemes.g.dart';
 import 'data/datasources/auth_local_datasource.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
+
   runApp(const MyApp());
 }
 
@@ -23,10 +25,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: ColorName.primary,
-      statusBarIconBrightness: Brightness.light,
-    ));
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -48,9 +46,29 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
                 useMaterial3: true,
+                colorScheme: lightColorScheme,
+                appBarTheme: const AppBarTheme(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: ColorName.primary,
+                    statusBarIconBrightness: Brightness.light,
+                  ),
+                ),
               ),
+              darkTheme: ThemeData(
+                useMaterial3: true,
+                colorScheme: darkColorScheme,
+                appBarTheme: const AppBarTheme(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Colors.transparent,
+                    statusBarIconBrightness: Brightness.dark,
+                  ),
+                ),
+              ),
+              // theme: ThemeData(
+              //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+              //   useMaterial3: true,
+              // ),
               home: FutureBuilder<bool>(
                 future: AuthLocalDatasource().isLogin(),
                 builder: (context, snapshot) {

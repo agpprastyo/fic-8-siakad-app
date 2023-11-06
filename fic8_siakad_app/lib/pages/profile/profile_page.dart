@@ -14,6 +14,7 @@ import '../auth/auth_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final String role;
+
   const ProfilePage({
     Key? key,
     required this.role,
@@ -71,7 +72,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-              color: ColorName.white,
+              color: Theme.of(context).colorScheme.tertiaryContainer,
               boxShadow: [
                 BoxShadow(
                   color: ColorName.black.withOpacity(0.25),
@@ -110,12 +111,13 @@ class _ProfilePageState extends State<ProfilePage> {
                           decoration: BoxDecoration(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16.0.r)),
-                            border: Border.all(color: ColorName.primary),
+                            border: Border.all(
+                                color: Theme.of(context).colorScheme.onSurface),
                           ),
                           child: Text(
                             widget.role,
                             style: TextStyle(
-                              color: ColorName.primary,
+                              color: Theme.of(context).colorScheme.onSurface,
                               fontSize: 8.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -124,9 +126,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         SizedBox(height: 4.h),
                         Text(
                           name,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            color: ColorName.primary,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         SizedBox(height: 4.h),
@@ -144,7 +146,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(height: 5.0.h),
                 Dash(
                   length: MediaQuery.of(context).size.width - 60.0.w,
-                  dashColor: const Color(0xffD5DFE7),
+                  dashColor: Theme.of(context).colorScheme.onSurface,
                 ),
                 SizedBox(height: 16.0.h),
               ],
@@ -155,7 +157,7 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-              color: ColorName.white,
+              color: Theme.of(context).colorScheme.tertiaryContainer,
               boxShadow: [
                 BoxShadow(
                   color: ColorName.black.withOpacity(0.25),
@@ -172,8 +174,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 RowText(
                   icon: const ImageIcon(IconName.profileLine),
                   label: 'Edit Informasi Profil',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: '',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {
                     // Navigator.push(
                     //   context,
@@ -187,16 +190,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 RowText(
                   icon: const Icon(Icons.notifications),
                   label: 'Notifikasi',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: 'ON',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
                 SizedBox(height: 12.0.h),
                 RowText(
                   icon: const Icon(Icons.translate),
                   label: 'Bahasa',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: 'Indonesia',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
               ],
@@ -207,7 +212,7 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-              color: ColorName.white,
+              color: Theme.of(context).colorScheme.tertiaryContainer,
               boxShadow: [
                 BoxShadow(
                   color: ColorName.black.withOpacity(0.25),
@@ -224,16 +229,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 RowText(
                   icon: const ImageIcon(IconName.projector2Line),
                   label: 'Keamanan',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: '',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
                 SizedBox(height: 12.0.h),
                 RowText(
                   icon: const ImageIcon(IconName.mentalHealthLine),
                   label: 'Tema',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: 'Mode Terang',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
               ],
@@ -244,7 +251,7 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 14.0.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-              color: ColorName.white,
+              color: Theme.of(context).colorScheme.tertiaryContainer,
               boxShadow: [
                 BoxShadow(
                   color: ColorName.black.withOpacity(0.25),
@@ -261,75 +268,90 @@ class _ProfilePageState extends State<ProfilePage> {
                 RowText(
                   icon: const ImageIcon(IconName.contactsLine),
                   label: 'Help & Support',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: '',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
                 SizedBox(height: 12.0.h),
                 RowText(
                   icon: const ImageIcon(IconName.chatQuoteLine),
                   label: 'Contact us',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: '',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
                 SizedBox(height: 12.0.h),
                 RowText(
                   icon: const Icon(Icons.lock),
                   label: 'Privacy policy',
+                  labelColor: Theme.of(context).colorScheme.onSurface,
                   value: '',
-                  valueColor: ColorName.primary,
+                  valueColor: Theme.of(context).colorScheme.onSurface,
                   onTap: () {},
                 ),
                 SizedBox(height: 12.h),
-                Center(
-                  child: BlocProvider(
-                    create: (context) => LogoutBloc(),
-                    child: BlocConsumer<LogoutBloc, LogoutState>(
-                      listener: (context, state) {
-                        state.maybeWhen(
-                          orElse: () {},
-                          loaded: () {
-                            AuthLocalDatasource().removeAuthData();
-                            Navigator.pushReplacement(context,
-                                MaterialPageRoute(builder: (context) {
-                              return const AuthPage();
-                            }));
-                          },
-                          error: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('logout error'),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                      builder: (context, state) {
-                        return state.maybeWhen(
-                          orElse: () {
-                            return ElevatedButton(
-                              onPressed: () {
-                                context
-                                    .read<LogoutBloc>()
-                                    .add(const LogoutEvent.logout());
-                              },
-                              child: const Text('Logout'),
-                            );
-                          },
-                          loaded: () {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                )
               ],
             ),
           ),
+          Center(
+            child: BlocProvider(
+              create: (context) => LogoutBloc(),
+              child: BlocConsumer<LogoutBloc, LogoutState>(
+                listener: (context, state) {
+                  state.maybeWhen(
+                    orElse: () {},
+                    loaded: () {
+                      AuthLocalDatasource().removeAuthData();
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const AuthPage();
+                      }));
+                    },
+                    error: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('logout error'),
+                        ),
+                      );
+                    },
+                  );
+                },
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: SizedBox(
+                          width: double.maxFinite,
+                          height: 50.h,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              context
+                                  .read<LogoutBloc>()
+                                  .add(const LogoutEvent.logout());
+                            },
+                            child: Text(
+                              'Logout',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    loaded: () {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          )
         ],
       ),
     );

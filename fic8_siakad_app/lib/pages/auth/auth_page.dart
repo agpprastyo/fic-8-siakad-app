@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bloc/login/login_bloc.dart';
-import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
 import '../../common/widgets/buttons.dart';
 import 'widgets/login_bottom_sheet.dart';
@@ -31,7 +30,7 @@ class _AuthPageState extends State<AuthPage> {
             style: TextStyle(
               fontSize: 34.sp,
               fontWeight: FontWeight.w800,
-              color: ColorName.primary,
+              // color: ColorName.primary,
             ),
           ),
           SizedBox(height: 8.0.h),
@@ -40,7 +39,7 @@ class _AuthPageState extends State<AuthPage> {
             style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.w600,
-              color: ColorName.grey,
+              // color: ColorName.grey,
             ),
           ),
         ]),
@@ -76,14 +75,17 @@ class _AuthPageState extends State<AuthPage> {
                     text: 'Ketentuan Layanan & Kebijakan Privasi',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: ColorName.primary,
+                      // add underline
+                      decoration: TextDecoration.underline,
+
+                      // color: ColorName.primary,
                     ),
                   ),
                 ],
               ),
               style: TextStyle(
                 fontSize: 12.sp,
-                color: ColorName.grey,
+                // color: ColorName.grey,
               ),
               textAlign: TextAlign.center,
             ),

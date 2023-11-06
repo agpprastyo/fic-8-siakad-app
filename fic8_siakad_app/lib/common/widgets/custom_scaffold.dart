@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../constants/colors.dart';
-
 class CustomScaffold extends StatelessWidget {
   final Widget? body;
   final bool useExtraPadding;
@@ -20,7 +18,7 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.primary,
+      // backgroundColor: ColorName.primary,
       body: useExtraPadding
           ? Stack(
               children: [
@@ -30,7 +28,7 @@ class CustomScaffold extends StatelessWidget {
                   margin: EdgeInsets.only(top: 30.0.h),
                   padding: EdgeInsets.only(bottom: 60.0.h),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.red,
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10.0.r),
                     ),
@@ -50,7 +48,7 @@ class CustomScaffold extends StatelessWidget {
                 margin: EdgeInsets.only(top: 30.0.h),
                 padding: EdgeInsets.only(bottom: 60.0.h),
                 decoration: BoxDecoration(
-                  color: ColorName.white,
+                  color: Theme.of(context).colorScheme.onTertiary,
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(10.0.r),
                   ),
