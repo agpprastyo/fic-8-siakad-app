@@ -100,10 +100,13 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
                     loaded: (data) {
                       AuthLocalDatasource().saveAuthData(data);
                       if (data.user.roles == 'admin') {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const MahasiswaPage();
-                        }));
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const MahasiswaPage();
+                          }),
+                          (Route<dynamic> route) => false,
+                        );
                       } else {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) {
