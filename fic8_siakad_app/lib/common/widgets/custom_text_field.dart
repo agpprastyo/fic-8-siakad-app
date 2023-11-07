@@ -7,6 +7,8 @@ class CustomTextField extends StatelessWidget {
   final Function(String value)? onChanged;
   final bool obscureText;
   final TextInputType textInputType;
+  final TextInputAction textInputAction;
+  final Function(String)? onFieldSubmitted;
 
   const CustomTextField({
     super.key,
@@ -15,6 +17,8 @@ class CustomTextField extends StatelessWidget {
     this.onChanged,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
+    this.textInputAction = TextInputAction.next,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -24,6 +28,9 @@ class CustomTextField extends StatelessWidget {
       onChanged: onChanged,
       keyboardType: textInputType,
       obscureText: obscureText,
+      textInputAction: textInputAction,
+      onFieldSubmitted: onFieldSubmitted,
+      focusNode: FocusNode(),
       decoration: InputDecoration(
         labelText: label,
         border: OutlineInputBorder(

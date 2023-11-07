@@ -50,7 +50,7 @@ class _AuthPageState extends State<AuthPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 8.0.h),
-            Button.outlined(
+            Button.filled(
               onPressed: () {
                 showModalBottomSheet(
                   context: context,
