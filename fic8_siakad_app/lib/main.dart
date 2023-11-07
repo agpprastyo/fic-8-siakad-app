@@ -1,6 +1,7 @@
 import 'package:fic8_siakad_app/pages/auth/auth_page.dart';
 import 'package:fic8_siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,10 +47,23 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 useMaterial3: true,
                 colorScheme: lightColorScheme,
+                appBarTheme: AppBarTheme(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Theme.of(context).colorScheme.onPrimary,
+                    statusBarIconBrightness: Brightness.light,
+                  ),
+                ),
               ),
               darkTheme: ThemeData(
                 useMaterial3: true,
                 colorScheme: darkColorScheme,
+                appBarTheme: AppBarTheme(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Theme.of(context).colorScheme.onPrimary,
+                    // statusBarColor: Colors.transparent,
+                    statusBarIconBrightness: Brightness.dark,
+                  ),
+                ),
               ),
               // theme: ThemeData(
               //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
