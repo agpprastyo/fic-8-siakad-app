@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../bloc/schedules/schedules_bloc.dart';
-import '../../common/constants/images.dart';
-import 'models/course_schedule_model.dart';
-import 'widgets/course_schedule_tile.dart';
-import 'widgets/course_with_image.dart';
+import '../../../bloc/schedules/schedules_bloc.dart';
+import '../../../common/constants/images.dart';
+import '../models/course_schedule_model.dart';
+import '../widgets/course_schedule_tile.dart';
+import '../widgets/course_with_image.dart';
 
 class JadwalMatkulPage extends StatefulWidget {
   const JadwalMatkulPage({super.key});

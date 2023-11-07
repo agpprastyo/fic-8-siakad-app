@@ -28,7 +28,7 @@ class CustomScaffold extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height - 120.0.h,
-                  margin: EdgeInsets.only(top: 30.0.h),
+                  margin: EdgeInsets.only(top: 10.0.h),
                   padding: EdgeInsets.only(bottom: 60.0.h),
                   decoration: BoxDecoration(
                     color: Colors.red,
@@ -48,7 +48,7 @@ class CustomScaffold extends StatelessWidget {
           : SingleChildScrollView(
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(top: 30.0.h),
+                margin: EdgeInsets.only(top: 16.0.h),
                 padding: EdgeInsets.only(bottom: 60.0.h),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.onTertiary,

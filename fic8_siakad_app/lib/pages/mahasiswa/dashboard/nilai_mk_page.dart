@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../common/constants/colors.dart';
-import '../../common/widgets/custom_scaffold.dart';
-import 'models/course_grade_model.dart';
-import 'widgets/couse_grade_tile.dart';
+import '../../../common/constants/colors.dart';
+import '../../../common/widgets/custom_scaffold.dart';
+import '../models/course_grade_model.dart';
+import '../widgets/couse_grade_tile.dart';
 
 class NilaiMkPage extends StatefulWidget {
   const NilaiMkPage({super.key});

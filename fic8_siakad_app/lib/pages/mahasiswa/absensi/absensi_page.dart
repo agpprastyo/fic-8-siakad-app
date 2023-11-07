@@ -1,4 +1,4 @@
-import 'package:fic8_siakad_app/pages/mahasiswa/widgets/qrcode_page.dart';
+import 'package:fic8_siakad_app/pages/mahasiswa/absensi/qrcode_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dash/flutter_dash.dart';
@@ -6,10 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
-import '../../common/constants/colors.dart';
-import '../../common/constants/icons.dart';
-import '../../common/widgets/buttons.dart';
-import '../../common/widgets/custom_scaffold.dart';
+import '../../../common/constants/colors.dart';
+import '../../../common/constants/icons.dart';
+import '../../../common/widgets/buttons.dart';
+import '../../../common/widgets/custom_scaffold.dart';
 
 class AbsensiPage extends StatefulWidget {
   const AbsensiPage({super.key});
@@ -95,31 +95,21 @@ class _AbsensiPageState extends State<AbsensiPage> {
     );
     return CustomScaffold(
       // useExtraPadding: true,
-      appbar: AppBar(),
+      appbar: AppBar(
+        title: Text('Absensi'),
+        centerTitle: true,
+      ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30.0.w),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
           Card(
-            // decoration: BoxDecoration(
-            //   borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-            //   color: ColorName.white,
-            //   boxShadow: [
-            //     BoxShadow(
-            //       blurRadius: 4.0,
-            //       offset: const Offset(0, 3),
-            //       spreadRadius: 0,
-            //       color: ColorName.black.withOpacity(0.25),
-            //       blurStyle: BlurStyle.outer,
-            //     ),
-            //   ],
-            // ),
             child: Column(
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: 28.0.w, vertical: 20.0.h),
+                      horizontal: 28.0.w, vertical: 10.0.h),
                   child: Row(
                     children: [
                       ClipRRect(
@@ -188,7 +178,7 @@ class _AbsensiPageState extends State<AbsensiPage> {
                       style: TextStyle(
                         fontSize: 32.sp,
                         fontWeight: FontWeight.w700,
-                        color: Colors.blue, // Ganti dengan warna yang sesuai
+                        color: Colors.blue,
                       ),
                     );
                   },

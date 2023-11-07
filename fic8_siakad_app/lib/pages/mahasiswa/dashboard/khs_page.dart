@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../bloc/khs/khs_bloc.dart';
-import '../../common/constants/colors.dart';
-import '../../common/widgets/row_text.dart';
+import '../../../bloc/khs/khs_bloc.dart';
+import '../../../common/constants/colors.dart';
+import '../../../common/widgets/row_text.dart';
 
 class KhsPage extends StatefulWidget {
   const KhsPage({super.key});
