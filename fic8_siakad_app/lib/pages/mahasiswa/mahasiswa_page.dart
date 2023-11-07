@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../common/constants/colors.dart';
 import '../../common/constants/icons.dart';
 import '../profile/profile_page.dart';
-import 'dashboard/dashboard_page.dart';
-import 'jadwal_mk/jadwal_matkul_page.dart';
+import 'dashboard_page.dart';
+import 'jadwal_matkul_page.dart';
 
 class MahasiswaPage extends StatefulWidget {
   const MahasiswaPage({super.key});

@@ -2,11 +2,11 @@ import 'package:fic8_siakad_app/pages/mahasiswa/widgets/sample_map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../common/constants/images.dart';
-import '../../../common/widgets/menu_card.dart';
-import '../../../common/widgets/search_input.dart';
-import '../absensi/absensi_page.dart';
-import '../jadwal_mk/jadwal_matkul_page.dart';
+import '../../common/constants/images.dart';
+import '../../common/widgets/menu_card.dart';
+import '../../common/widgets/search_input.dart';
+import 'absensi_page.dart';
+import 'jadwal_matkul_page.dart';
 import 'khs_page.dart';
 import 'nilai_mk_page.dart';
 
